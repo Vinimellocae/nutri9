@@ -1,0 +1,471 @@
+/* ════════════════════════════════════════════════════
+   NutriNove — form.css
+   Estilos exclusivos do formulário de geração de dieta
+   ════════════════════════════════════════════════════ */
+
+/* Tokens locais alinhados com style.css */
+:root {
+  --green-dark: #1b5e20;
+  --green-mid: #29682b;
+  --green-soft: #388e3c;
+  --green-light: #a5d6a7;
+  --green-pale: #e8f5e9;
+  --cream: #f5f0e8;
+  --cream-dark: #e8e0d0;
+  --text-dark: #1a1a1a;
+  --text-mid: #3d5a47;
+  --text-light: #6b8f78;
+  --accent: #c8a84b;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(27, 94, 32, 0.12);
+}
+
+@keyframes formSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── main ─────────────────────────────────────────── */
+main {
+  padding: 0 1rem 64px;
+}
+
+/* ── Wrapper central ──────────────────────────────── */
+.form-card {
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 980px;
+  margin-top: -2.5rem;
+  margin-inline: auto;
+  overflow: hidden;
+  animation: formSlideUp 0.5s ease both;
+}
+
+/* ── Cabeçalho do card ────────────────────────────── */
+.form-header {
+  background: linear-gradient(
+    135deg,
+    var(--green-mid) 0%,
+    var(--green-dark) 100%
+  );
+  padding: 36px 40px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-header::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.form-header::before {
+  content: "";
+  position: absolute;
+  right: 60px;
+  bottom: -50px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(200, 168, 75, 0.1);
+  pointer-events: none;
+}
+
+.form-header h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  color: var(--white);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.form-header h1 em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.form-header p {
+  margin-top: 8px;
+  color: var(--green-light);
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+/* ── Corpo ────────────────────────────────────────── */
+form {
+  padding: 36px 40px 40px;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+/* ── Reset ────────────────────────────────────────── */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  box-sizing: border-box;
+}
+
+/* ── Títulos de seção ─────────────────────────────── */
+.section-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-light);
+  margin: 28px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--cream-dark);
+}
+
+.section-title:first-of-type {
+  margin-top: 0;
+}
+
+/* ── Grid de duas colunas ─────────────────────────── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── Grupo de campo ───────────────────────────────── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  color: var(--text-mid);
+  letter-spacing: 0.2px;
+}
+
+.form-group label .required {
+  color: var(--accent);
+  margin-left: 2px;
+}
+
+/* ── Inputs, selects, textarea ────────────────────── */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--cream-dark);
+  border-radius: var(--radius);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.925rem;
+  color: var(--text-dark);
+  background: var(--cream);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--green-soft);
+  box-shadow: 0 0 0 3px rgba(56, 142, 60, 0.15);
+  background: var(--white);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #b0bfb7;
+}
+
+/* Select com seta customizada */
+.form-group select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b8f78' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.5;
+}
+
+/* ── Input com badge de unidade ───────────────────── */
+.input-with-unit {
+  position: relative;
+}
+.input-with-unit input {
+  padding-right: 56px;
+}
+
+.unit-badge {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-light);
+  pointer-events: none;
+  background: var(--cream-dark);
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* ── Checkboxes de objetivo ───────────────────────── */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--cream-dark);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+  user-select: none;
+}
+
+.checkbox-item:hover {
+  background: var(--green-pale);
+  border-color: var(--green-soft);
+}
+
+.checkbox-item input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  accent-color: var(--green-soft);
+  cursor: pointer;
+}
+
+.checkbox-item span {
+  font-size: 15px;
+  font-family: "Nunito", sans-serif;
+  color: var(--text-mid);
+  font-weight: 500;
+}
+
+.checkbox-item:has(input:checked) {
+  border-color: var(--green-soft);
+  background: var(--green-pale);
+}
+
+/* ── Preview de IMC ───────────────────────────────── */
+.imc-preview {
+  background: var(--green-pale);
+  border: 1.5px solid var(--green-light);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.imc-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.imc-value {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.imc-class {
+  font-size: 0.82rem;
+  color: var(--green-soft);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* ── Botão de envio ───────────────────────────────── */
+.btn-submit {
+  margin-top: 32px;
+  width: 100%;
+  padding: 15px;
+  background: var(--green-mid);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(27, 94, 32, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-submit:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(27, 94, 32, 0.32);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* ── Hero ─────────────────────────────────────────── */
+.form-hero {
+  background: linear-gradient(
+    135deg,
+    var(--green-dark) 0%,
+    var(--green-mid) 100%
+  );
+  padding: 3.5rem 1.5rem 4.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-hero::before,
+.form-hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.form-hero::before {
+  width: 260px;
+  height: 260px;
+  background: rgba(255, 255, 255, 0.04);
+  top: -80px;
+  right: -60px;
+}
+.form-hero::after {
+  width: 180px;
+  height: 180px;
+  background: rgba(200, 168, 75, 0.08);
+  bottom: -60px;
+  left: -40px;
+}
+
+.form-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.form-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 5px 18px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.form-hero h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+}
+
+.form-hero h1 em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.form-hero p {
+  color: var(--green-light);
+  font-size: 1rem;
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  main {
+    padding: 0;
+  }
+
+  .form-card {
+    border-radius: 0;
+    margin: 0;
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .form-header {
+    padding: 28px 20px;
+  }
+
+  .form-header h1 {
+    font-size: 1.4rem;
+  }
+
+  form {
+    padding: 24px 16px 32px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+}

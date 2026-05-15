@@ -1,0 +1,396 @@
+/* ════════════════════════════════════════════════════
+   NutriNove — historico.css
+   ════════════════════════════════════════════════════ */
+
+:root {
+  --green-dark: #1b5e20;
+  --green-mid: #29682b;
+  --green-soft: #388e3c;
+  --green-light: #a5d6a7;
+  --green-pale: #e8f5e9;
+  --cream: #f5f0e8;
+  --cream-dark: #e8e0d0;
+  --text-dark: #1a1a1a;
+  --text-mid: #3d5a47;
+  --text-light: #6b8f78;
+  --accent: #c8a84b;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 24px rgba(27, 94, 32, 0.12);
+}
+
+@keyframes formSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Hero banner ──────────────────────────────────── */
+.hist-hero {
+  background: linear-gradient(
+    135deg,
+    var(--green-dark) 0%,
+    var(--green-mid) 100%
+  );
+  padding: 3.5rem 1.5rem 4.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Círculos decorativos */
+.hist-hero::before,
+.hist-hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hist-hero::before {
+  width: 260px;
+  height: 260px;
+  background: rgba(255, 255, 255, 0.04);
+  top: -80px;
+  right: -60px;
+}
+.hist-hero::after {
+  width: 180px;
+  height: 180px;
+  background: rgba(200, 168, 75, 0.08);
+  bottom: -60px;
+  left: -40px;
+}
+
+.hist-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hist-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 5px 18px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.hist-hero h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+}
+
+.hist-hero p {
+  color: var(--green-light);
+  font-size: 1rem;
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+/* ── Main ─────────────────────────────────────────── */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem 64px;
+  min-height: 60vh;
+}
+
+/* ── Search card ──────────────────────────────────── */
+.search-card {
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 560px;
+  padding: 2.25rem 2.5rem 2.5rem;
+  text-align: center;
+
+  /* Sobrepõe o hero */
+  margin-top: -2.5rem;
+  position: relative;
+  z-index: 10;
+
+  animation: formSlideUp 0.5s ease both;
+}
+
+.search-card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.search-card h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 0.35rem;
+}
+
+.search-card-sub {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-bottom: 1.75rem;
+}
+
+/* ── Search group ─────────────────────────────────── */
+.search-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.search-group label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-mid);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Roboto", sans-serif;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+}
+
+.search-group input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1.5px solid var(--cream-dark);
+  border-radius: var(--radius);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  background: var(--cream);
+  color: var(--text-dark);
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+  box-sizing: border-box;
+}
+
+.search-group input:focus {
+  border-color: var(--green-soft);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(56, 142, 60, 0.15);
+}
+
+.search-group input::placeholder {
+  color: #b0bfb7;
+}
+
+.btn-search {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 22px;
+  background: var(--green-mid);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.2);
+}
+
+.btn-search:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(27, 94, 32, 0.28);
+}
+
+.btn-search:active {
+  transform: translateY(0);
+}
+
+/* ── Lista de resultados ──────────────────────────── */
+.results-list {
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 560px;
+  display: grid;
+  gap: 12px;
+}
+
+/* ── Item de dieta (classes preservadas pro JS) ───── */
+.diet-item {
+  background: var(--white);
+  padding: 18px 20px;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  animation: formSlideUp 0.35s ease forwards;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.diet-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.diet-info h4 {
+  font-family: "Nunito", sans-serif;
+  color: var(--green-dark);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.diet-info span {
+  font-size: 0.82rem;
+  color: var(--text-light);
+}
+
+.btn-open {
+  flex-shrink: 0;
+  background: var(--green-pale);
+  color: var(--green-mid);
+  border: 1.5px solid var(--green-light);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  white-space: nowrap;
+}
+
+.btn-open:hover {
+  background: var(--green-mid);
+  color: var(--white);
+  border-color: var(--green-mid);
+}
+
+/* ── Modal ────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(27, 94, 32, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(3px);
+}
+
+.modal-box {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+  animation: formSlideUp 0.35s ease;
+}
+
+.modal-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.modal-box h3 {
+  color: var(--green-dark);
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.modal-box p {
+  color: var(--text-mid);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.95rem;
+  margin-bottom: 1.75rem;
+  line-height: 1.6;
+}
+
+.btn-modal {
+  background: var(--green-mid);
+  color: var(--white);
+  border: none;
+  padding: 12px 32px;
+  border-radius: var(--radius);
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+  width: 100%;
+}
+
+.btn-modal:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+/* ── Responsivo ───────────────────────────────────── */
+@media (max-width: 640px) {
+  .hist-hero {
+    padding: 2.5rem 1rem 3.5rem;
+  }
+
+  .search-card {
+    padding: 1.75rem 1.25rem 2rem;
+    border-radius: 16px;
+    margin-top: -2rem;
+  }
+
+  .btn-search {
+    padding: 0 14px;
+    font-size: 0.82rem;
+    gap: 5px;
+  }
+
+  .btn-search svg {
+    display: none;
+  } /* só texto no mobile pequeno */
+
+  .diet-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-open {
+    width: 100%;
+    text-align: center;
+  }
+}
