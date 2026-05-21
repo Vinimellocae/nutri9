@@ -1,146 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NutriNove - Página Inicial</title>
-    <link rel="icon" type="image/x-icon" href="assets/imgs/tomate-icone.ico">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="icon" type="image/x-icon" href="assets/imgs/tomate-icone.ico" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
-
+  <body>
     <!-- HEADER -->
     <header>
-        <div class="header-inner">
-            <img src="assets/imgs/logo nutrinove.png" alt="NutriNove logo" id="logo">
+      <div class="header-inner">
+        <a href="index.html" class="logo-a">
+          <img
+            src="assets/imgs/logo nutrinove.png"
+            alt="NutriNove logo"
+            id="logo"
+          />
+        </a>
 
-            <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-            <nav id="mainNav">
-                <a href="index.html">Página Inicial</a>
-                <a href="pages/Formulario.html">Formulário</a>
-                <a href="pages/Historico.html">Histórico</a>
-                <a href="pages/Sobre.html">Sobre o Projeto</a>
-            </nav>
-        </div>
+        <nav id="mainNav">
+          <a href="index.html">Página Inicial</a>
+          <a href="pages/Formulario.html">Formulário</a>
+          <a href="pages/Historico.html">Histórico</a>
+          <a href="pages/Sobre.html">Sobre o Projeto</a>
+        </nav>
+      </div>
     </header>
 
     <!-- HERO -->
-    <section class="hero" style="background-image: url('assets/imgs/abacaxi.png');">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <span class="hero-badge">🌿 Nutrição personalizada</span>
-            <h1>Cuide da sua alimentação com inteligência</h1>
-            <p>A NutriNove foi desenvolvida para te ajudar a transformar seus dados em decisões e suas decisões em
-                resultados reais.</p>
-            <div class="hero-actions">
-                <a href="pages/Formulario.html" class="btn btn-primary">Começar agora</a>
-                <a href="pages/Sobre.html" class="btn btn-outline">Saiba mais</a>
-            </div>
+    <section
+      class="hero"
+      style="background-image: url(&quot;assets/imgs/abacaxi.png&quot;)"
+    >
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-badge">🌿 Nutrição personalizada</span>
+        <h1>Cuide da sua alimentação com inteligência</h1>
+        <p>
+          A NutriNove foi desenvolvida para te ajudar a transformar seus dados
+          em decisões e suas decisões em resultados reais.
+        </p>
+        <div class="hero-actions">
+          <a href="pages/Formulario.html" class="btn btn-primary"
+            >Começar agora</a
+          >
+          <a href="pages/Sobre.html" class="btn btn-outline">Saiba mais</a>
         </div>
+      </div>
     </section>
 
     <!-- INTRO -->
     <section class="section section-light">
-        <div class="container">
-            <div class="intro-grid">
-                <div class="intro-text">
-                    <h2>Introdução ao projeto</h2>
-                    <p>Cuidar da sua alimentação é o primeiro passo para uma boa saúde e bom desenvolvimento físico. Com
-                        planos alimentares personalizados você pode atingir seu objetivo de forma simples, rápida,
-                        objetiva e acessível!</p>
-                    <p>Utilizando seus dados e focados na sua meta, geramos um guia exclusivo para você. Transforme seus
-                        dados em decisões e suas decisões em resultado!</p>
-                </div>
-                <div class="intro-stats">
-                    <div class="stat-card">
-                        <span class="stat-number">2min</span>
-                        <span class="stat-label">Para gerar seu plano</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Personalizado</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">4</span>
-                        <span class="stat-label">Metas disponíveis</span>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="intro-grid">
+          <div class="intro-text">
+            <h2>Introdução ao projeto</h2>
+            <p>
+              Cuidar da sua alimentação é o primeiro passo para uma boa saúde e
+              bom desenvolvimento físico. Com planos alimentares personalizados
+              você pode atingir seu objetivo de forma simples, rápida, objetiva
+              e acessível!
+            </p>
+            <p>
+              Utilizando seus dados e focados na sua meta, geramos um guia
+              exclusivo para você. Transforme seus dados em decisões e suas
+              decisões em resultado!
+            </p>
+          </div>
+          <div class="intro-stats">
+            <div class="stat-card">
+              <span class="stat-number">2min</span>
+              <span class="stat-label">Para gerar seu plano</span>
             </div>
+            <div class="stat-card">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Personalizado</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">4</span>
+              <span class="stat-label">Metas disponíveis</span>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- HOW IT WORKS -->
-    <section class="section section-green" style="background-image: url('assets/imgs/laranja.png');">
-        <div class="section-overlay"></div>
-        <div class="container">
-            <div class="section-header">
-                <h2>Como utilizar a ferramenta?</h2>
-                <p>Para começarmos, precisamos de apenas alguns dados. Responda com atenção para garantirmos a máxima
-                    precisão e em menos de 2 minutos, seu plano exclusivo estará pronto!</p>
-            </div>
-
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Preencha seus dados</h3>
-                    <p>Informe seu nome, idade, sexo, peso, altura e mais alguns dados extras sobre sua rotina.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Defina seu objetivo</h3>
-                    <p>Escolha sua meta: ganho ou perda de peso, ganho de massa muscular ou manutenção.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Gere seu plano</h3>
-                    <p>Nossa ferramenta cria automaticamente um guia alimentar personalizado com base nos seus dados.
-                    </p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h3>Siga e adapte</h3>
-                    <p>Use o plano no seu dia a dia e ajuste conforme a sua rotina e evolução.</p>
-                </div>
-            </div>
+    <section
+      class="section section-green"
+      style="background-image: url(&quot;assets/imgs/laranja.png&quot;)"
+    >
+      <div class="section-overlay"></div>
+      <div class="container">
+        <div class="section-header">
+          <h2>Como utilizar a ferramenta?</h2>
+          <p>
+            Para começarmos, precisamos de apenas alguns dados. Responda com
+            atenção para garantirmos a máxima precisão e em menos de 2 minutos,
+            seu plano exclusivo estará pronto!
+          </p>
         </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Preencha seus dados</h3>
+            <p>
+              Informe seu nome, idade, sexo, peso, altura e mais alguns dados
+              extras sobre sua rotina.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Defina seu objetivo</h3>
+            <p>
+              Escolha sua meta: ganho ou perda de peso, ganho de massa muscular
+              ou manutenção.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Gere seu plano</h3>
+            <p>
+              Nossa ferramenta cria automaticamente um guia alimentar
+              personalizado com base nos seus dados.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Siga e adapte</h3>
+            <p>
+              Use o plano no seu dia a dia e ajuste conforme a sua rotina e
+              evolução.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA -->
     <section class="section cta-section">
-        <div class="container">
-            <div class="cta-box">
-                <h2>Pronto para começar?</h2>
-                <p>Preencha nosso formulário rápido e receba em instantes um plano alimentar personalizado de acordo com
-                    seus objetivos. Simples, gratuito e feito para você.</p>
-                <a href="pages/Formulario.html" class="btn btn-primary btn-large">Preencher formulário</a>
-            </div>
+      <div class="container">
+        <div class="cta-box">
+          <h2>Pronto para começar?</h2>
+          <p>
+            Preencha nosso formulário rápido e receba em instantes um plano
+            alimentar personalizado de acordo com seus objetivos. Simples,
+            gratuito e feito para você.
+          </p>
+          <a href="pages/Formulario.html" class="btn btn-primary btn-large"
+            >Preencher formulário</a
+          >
         </div>
+      </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-inner">
-            <img src="assets/imgs/logo nutrinove dark.png" alt="NutriNove logo" id="logoFooter">
-            <p class="copy">© 2026 NutriNove — Projeto Extensivo</p>
-        </div>
+      <div class="footer-inner">
+        <img
+          src="assets/imgs/logo nutrinove dark.png"
+          alt="NutriNove logo"
+          id="logoFooter"
+        />
+        <p class="copy">© 2026 NutriNove — Projeto Extensivo</p>
+      </div>
     </footer>
 
     <script>
-        const toggle = document.getElementById('navToggle');
-        const nav = document.getElementById('mainNav');
-        toggle.addEventListener('click', () => {
-            const open = nav.classList.toggle('open');
-            toggle.setAttribute('aria-expanded', open);
-        });
+      const toggle = document.getElementById("navToggle");
+      const nav = document.getElementById("mainNav");
+      toggle.addEventListener("click", () => {
+        const open = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open);
+      });
     </script>
-
-</body>
-
+  </body>
 </html>

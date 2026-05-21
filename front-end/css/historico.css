@@ -244,7 +244,7 @@ main {
   background: var(--white);
   padding: 18px 20px;
   border-radius: var(--radius);
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid var(--green-soft);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -269,9 +269,23 @@ main {
   margin-bottom: 4px;
 }
 
-.diet-info span {
-  font-size: 0.82rem;
-  color: var(--text-light);
+.diet-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.diet-tag {
+  background: var(--green-pale);
+  color: var(--text-mid);
+  border: 1px solid var(--green-light);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  white-space: nowrap;
 }
 
 .btn-open {

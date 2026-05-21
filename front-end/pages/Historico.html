@@ -1,113 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NutriNove - Histórico</title>
-    <link rel="icon" type="image/x-icon" href="../assets/imgs/tomate-icone.ico">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/historico.css">
-</head>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/imgs/tomate-icone.ico"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/historico.css" />
+  </head>
 
-<body>
-
+  <body>
     <!-- MODAL (IDs preservados pro JS) -->
     <div id="modalAviso" class="modal-overlay">
-        <div class="modal-box">
-            <div class="modal-icon">⚠️</div>
-            <h3 id="modalTitulo">Atenção</h3>
-            <p id="modalMensagem"></p>
-            <button class="btn-modal" onclick="fecharModal()">Entendi</button>
-        </div>
+      <div class="modal-box">
+        <div class="modal-icon">⚠️</div>
+        <h3 id="modalTitulo">Atenção</h3>
+        <p id="modalMensagem"></p>
+        <button class="btn-modal" onclick="fecharModal()">Entendi</button>
+      </div>
     </div>
 
     <!-- HEADER -->
     <header>
-        <div class="header-inner">
-            <img src="../assets/imgs/logo nutrinove.png" alt="NutriNove logo" id="logo">
-            <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-            <nav id="mainNav">
-                <a href="../Index.html">Página Inicial</a>
-                <a href="Formulario.html">Formulário</a>
-                <a href="Historico.html">Histórico</a>
-                <a href="Sobre.html">Sobre o Projeto</a>
-            </nav>
-        </div>
+      <div class="header-inner">
+        <a href="../index.html" class="logo-a">
+          <img
+            src="../assets/imgs/logo nutrinove.png"
+            alt="NutriNove logo"
+            id="logo"
+          />
+        </a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="mainNav">
+          <a href="../Index.html">Página Inicial</a>
+          <a href="Formulario.html">Formulário</a>
+          <a href="Historico.html">Histórico</a>
+          <a href="Sobre.html">Sobre o Projeto</a>
+        </nav>
+      </div>
     </header>
 
     <!-- HERO BANNER -->
     <section class="hist-hero">
-        <div class="hist-hero-inner">
-            <span class="hist-badge">📋 Seus registros</span>
-            <h1>Histórico de Dietas</h1>
-            <p>Informe seu CPF para acessar todos os planos alimentares gerados anteriormente.</p>
-        </div>
+      <div class="hist-hero-inner">
+        <span class="hist-badge">📋 Seus registros</span>
+        <h1>Histórico de Dietas</h1>
+        <p>
+          Informe seu CPF para acessar todos os planos alimentares gerados
+          anteriormente.
+        </p>
+      </div>
     </section>
 
     <main>
+      <!-- CARD DE BUSCA -->
+      <div class="search-card">
+        <div class="search-card-icon">🔍</div>
+        <h2>Buscar meus planos</h2>
+        <p class="search-card-sub">
+          Digite seu CPF para consultar seu histórico
+        </p>
 
-        <!-- CARD DE BUSCA -->
-        <div class="search-card">
-            <div class="search-card-icon">🔍</div>
-            <h2>Buscar meus planos</h2>
-            <p class="search-card-sub">Digite seu CPF para consultar seu histórico</p>
-
-            <div class="search-group">
-                <label for="cpf">CPF</label>
-                <div class="input-container">
-                    <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" autocomplete="off">
-                    <button class="btn-search" onclick="buscarHistorico()">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="11" cy="11" r="8" />
-                            <path d="m21 21-4.35-4.35" />
-                        </svg>
-                        Buscar
-                    </button>
-                </div>
-            </div>
+        <div class="search-group">
+          <label for="cpf">CPF</label>
+          <div class="input-container">
+            <input
+              type="text"
+              id="cpf"
+              placeholder="000.000.000-00"
+              maxlength="14"
+              autocomplete="off"
+            />
+            <button class="btn-search" onclick="buscarHistorico()">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+              Buscar
+            </button>
+          </div>
         </div>
+      </div>
 
-        <!-- RESULTADOS (estrutura preservada pro JS) -->
-        <div id="listaResultados" class="results-list"></div>
-
+      <!-- RESULTADOS (estrutura preservada pro JS) -->
+      <div id="listaResultados" class="results-list"></div>
     </main>
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-inner">
-            <img src="../assets/imgs/logo nutrinove dark.png" alt="NutriNove logo" id="logoFooter">
-            <p class="copy">© 2026 NutriNove — Projeto Extensivo</p>
-        </div>
+      <div class="footer-inner">
+        <img
+          src="../assets/imgs/logo nutrinove dark.png"
+          alt="NutriNove logo"
+          id="logoFooter"
+        />
+        <p class="copy">© 2026 NutriNove — Projeto Extensivo</p>
+      </div>
     </footer>
 
     <script src="../js/historico.js"></script>
     <script>
-        /* Hambúrguer */
-        const toggle = document.getElementById('navToggle');
-        const nav = document.getElementById('mainNav');
-        toggle.addEventListener('click', () => {
-            const open = nav.classList.toggle('open');
-            toggle.setAttribute('aria-expanded', open);
-        });
+      /* Hambúrguer */
+      const toggle = document.getElementById("navToggle");
+      const nav = document.getElementById("mainNav");
+      toggle.addEventListener("click", () => {
+        const open = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open);
+      });
 
-        /* Máscara CPF */
-        document.getElementById('cpf').addEventListener('input', function () {
-            let v = this.value.replace(/\D/g, '').slice(0, 11);
-            if (v.length > 9) v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, '$1.$2.$3-$4');
-            else if (v.length > 6) v = v.replace(/(\d{3})(\d{3})(\d{0,3})/, '$1.$2.$3');
-            else if (v.length > 3) v = v.replace(/(\d{3})(\d{0,3})/, '$1.$2');
-            this.value = v;
-        });
+      /* Máscara CPF */
+      document.getElementById("cpf").addEventListener("input", function () {
+        let v = this.value.replace(/\D/g, "").slice(0, 11);
+        if (v.length > 9)
+          v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, "$1.$2.$3-$4");
+        else if (v.length > 6)
+          v = v.replace(/(\d{3})(\d{3})(\d{0,3})/, "$1.$2.$3");
+        else if (v.length > 3) v = v.replace(/(\d{3})(\d{0,3})/, "$1.$2");
+        this.value = v;
+      });
 
-        /* Enter no input dispara busca */
-        document.getElementById('cpf').addEventListener('keydown', function (e) {
-            if (e.key === 'Enter') buscarHistorico();
-        });
+      /* Enter no input dispara busca */
+      document.getElementById("cpf").addEventListener("keydown", function (e) {
+        if (e.key === "Enter") buscarHistorico();
+      });
     </script>
-</body>
-
+  </body>
 </html>

@@ -437,6 +437,219 @@ form {
   line-height: 1.6;
 }
 
+/* ════════════════════════════════════════════════════
+   NutriNove — Estados Dinâmicos (JS)
+   Estilos para Loading, Sucesso e Erro
+   ════════════════════════════════════════════════════ */
+
+/* ── Estado de Loading ────────────────────────────── */
+.estado-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 40px;
+  animation: formSlideUp 0.4s ease both;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4.5px solid var(--green-pale);
+  border-top-color: var(--green-soft);
+  border-radius: 50%;
+  animation: spinner 0.8s linear infinite;
+  margin-bottom: 24px;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.estado-loading h2 {
+  font-family: "Roboto", sans-serif;
+  color: var(--green-dark);
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.estado-loading p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+/* Lista de passos do loading */
+.loading-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 320px;
+  width: 100%;
+  text-align: left;
+  background: var(--cream);
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--cream-dark);
+}
+
+.step {
+  font-size: 0.9rem;
+  color: #b0bfb7; /* Tom cinza/apagado para passos pendentes */
+  transition:
+    color 0.3s ease,
+    font-weight 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.step.ativo {
+  color: var(--text-mid);
+  font-weight: 700;
+}
+
+.step.concluido {
+  color: var(--green-soft);
+  font-weight: 500;
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+/* ── Estados de Feedback (Sucesso e Erro) ─────────── */
+.estado-feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 40px;
+  animation: formSlideUp 0.4s ease both;
+}
+
+.feedback-icon {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.estado-feedback h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.estado-sucesso h2 {
+  color: var(--green-dark);
+}
+
+.estado-erro h2 {
+  color: #c62828; /* Cor de erro padrão sem quebrar a paleta */
+}
+
+.estado-feedback p {
+  color: var(--text-mid);
+  font-size: 1rem;
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.estado-feedback strong {
+  color: var(--green-dark);
+}
+
+/* Botões de Ação nos Feedbacks */
+.feedback-acoes {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  width: 100%;
+  max-width: 440px;
+}
+
+.btn-feedback {
+  flex: 1;
+  padding: 13px 20px;
+  border-radius: var(--radius);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-primario {
+  background: var(--green-mid);
+  color: var(--white);
+  border: none;
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.2);
+}
+
+.btn-primario:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secundario {
+  background: var(--white);
+  color: var(--green-dark);
+  border: 1.5px solid var(--green-light);
+}
+
+.btn-secundario:hover {
+  background: var(--green-pale);
+  transform: translateY(-2px);
+}
+
+/* Botão específico do Estado de Erro */
+.estado-erro .btn-feedback {
+  background: var(--cream-dark);
+  color: var(--text-dark);
+  border: none;
+}
+
+.estado-erro .btn-feedback:hover {
+  background: #dbd2bf;
+  transform: translateY(-2px);
+}
+
+/* ── Responsividade para Telas Menores ────────────── */
+@media (max-width: 640px) {
+  .estado-loading,
+  .estado-feedback {
+    padding: 40px 20px;
+  }
+
+  .estado-loading h2 {
+    font-size: 1.35rem;
+  }
+
+  .estado-feedback h2 {
+    font-size: 1.45rem;
+  }
+
+  .feedback-acoes {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .btn-feedback {
+    width: 100%;
+  }
+}
+
 @media (max-width: 640px) {
   main {
     padding: 0;

@@ -1,21 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NutriNove - Formulário</title>
-  <link rel="icon" type="image/x-icon" href="../assets/imgs/tomate-icone.ico">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/form.css">
+  <link rel="icon" type="image/x-icon" href="../assets/imgs/tomate-icone.ico" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/form.css" />
 </head>
 
 <body>
-
   <!-- HEADER -->
   <header>
     <div class="header-inner">
-      <img src="../assets/imgs/logo nutrinove.png" alt="NutriNove logo" id="logo">
+      <a class="logo-a" href="../index.html">
+        <img src="../assets/imgs/logo nutrinove.png" alt="NutriNove logo" id="logo" />
+      </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -35,7 +36,10 @@
     <div class="form-hero-inner">
       <span class="form-badge">🥗 Plano personalizado</span>
       <h1>Gere sua <em>dieta</em> personalizada!</h1>
-      <p>Preencha os dados abaixo e receba em instantes um plano alimentar feito para você.</p>
+      <p>
+        Preencha os dados abaixo e receba em instantes um plano alimentar
+        feito para você.
+      </p>
     </div>
   </section>
 
@@ -45,22 +49,27 @@
 
         <!-- Seção 1: Dados pessoais -->
         <p class="section-title">Dados Pessoais</p>
+        <div class="form-row" style="margin-top: 16px">
 
-        <div class="form-row">
+          <div class="form-group">
+            <label for="nome">Nome completo <span class="required">*</span></label>
+            <input type="text" id="nome" name="nome" placeholder="Ex: João da Silva" required />
+          </div>
+
           <div class="form-group">
             <label for="cpf">CPF <span class="required">*</span></label>
-            <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" required>
-          </div>
-          <div class="form-group">
-            <label for="idade">Idade <span class="required">*</span></label>
-            <div class="input-with-unit">
-              <input type="number" id="idade" name="idade" placeholder="Ex: 28" min="10" max="110" required>
-              <span class="unit-badge">anos</span>
-            </div>
+            <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" required />
           </div>
         </div>
 
-        <div class="form-row" style="margin-top:16px">
+        <div class="form-row" style="margin-top: 16px">
+          <div class="form-group">
+            <label for="idade">Idade <span class="required">*</span></label>
+            <div class="input-with-unit">
+              <input type="number" id="idade" name="idade" placeholder="Ex: 28" min="10" max="110" required />
+              <span class="unit-badge">anos</span>
+            </div>
+          </div>
           <div class="form-group">
             <label for="sexo">Sexo <span class="required">*</span></label>
             <select id="sexo" name="sexo" required>
@@ -69,6 +78,9 @@
               <option value="feminino">Feminino</option>
             </select>
           </div>
+        </div>
+
+        <div class="form-row" style="margin-top: 16px">
           <div class="form-group">
             <label for="nivel_atividade">Nível de atividade <span class="required">*</span></label>
             <select id="nivel_atividade" name="nivel_atividade" required>
@@ -76,7 +88,16 @@
               <option value="sedentario">Sedentário (sem exercício)</option>
               <option value="leve">Levemente ativo (1–2x/sem)</option>
               <option value="moderado">Moderadamente ativo (3–4x/sem)</option>
-              <option value="ativo">Muito ativo (4x ou mais x/sem)</option>
+              <option value="intenso">Muito ativo (4x ou mais x/sem)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="restricoes">Restrições Alimentares</label>
+            <select id="restricoes" name="restricoes">
+              <option value="nenhum">Nenhuma</option>
+              <option value="lactose">Intolerância a lactose</option>
+              <option value="vegetariana">Vegetariano</option>
+              <option value="amendoim">Amendoim</option>
             </select>
           </div>
         </div>
@@ -88,22 +109,21 @@
           <div class="form-group">
             <label for="altura">Altura <span class="required">*</span></label>
             <div class="input-with-unit">
-              <input type="number" id="altura" name="altura" placeholder="Ex: 1.80" step="0.01" min="1.00" max="2.50"
-                required>
+              <input type="text" id="altura" name="altura" placeholder="Ex: 1.80" required />
               <span class="unit-badge">m</span>
             </div>
           </div>
           <div class="form-group">
             <label for="peso">Peso atual <span class="required">*</span></label>
             <div class="input-with-unit">
-              <input type="number" id="peso" name="peso" placeholder="Ex: 70" step="0.1" min="30" max="300" required>
+              <input type="text" id="peso" name="peso" placeholder="Ex: 70,5" required />
               <span class="unit-badge">kg</span>
             </div>
           </div>
         </div>
 
         <!-- IMC em tempo real -->
-        <div class="imc-preview" id="imcBox" style="display:none; margin-top:16px;">
+        <div class="imc-preview" id="imcBox" style="display: none; margin-top: 16px">
           <div>
             <div class="imc-label">IMC calculado</div>
             <div class="imc-class" id="imcClass">—</div>
@@ -118,48 +138,25 @@
           <label>Selecione seu objetivo <span class="required">*</span></label>
           <div class="checkbox-grid">
             <label class="checkbox-item">
-              <input type="radio" name="objetivo" value="emagrecimento">
+              <input type="radio" name="objetivo" value="emagrecimento" />
               <span>⬇️ Emagrecimento</span>
             </label>
             <label class="checkbox-item">
-              <input type="radio" name="objetivo" value="massa_muscular">
+              <input type="radio" name="objetivo" value="massa_muscular" />
               <span>💪 Ganho de massa</span>
             </label>
             <label class="checkbox-item">
-              <input type="radio" name="objetivo" value="manutencao">
+              <input type="radio" name="objetivo" value="manutencao" />
               <span>⚖️ Manutenção</span>
             </label>
             <label class="checkbox-item">
-              <input type="radio" name="objetivo" value="saude_geral">
+              <input type="radio" name="objetivo" value="saude_geral" />
               <span>🥗 Saúde geral</span>
             </label>
           </div>
         </div>
 
-        <!-- Seção 4: Restrições -->
-        <p class="section-title">Restrições &amp; Preferências</p>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="restricoes">Restrições Alimentares</label>
-            <select id="restricoes" name="restricoes">
-              <option value="nenhum">Nenhuma</option>
-              <option value="lactose">Intolerância a lactose</option>
-              <option value="vegetariana">Vegetariano</option>
-              <option value="amendoim">Amendoim</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="refeicoes">Refeições por dia</label>
-            <select id="refeicoes" name="refeicoes">
-              <option value="3">3 refeições</option>
-              <option value="4">4 refeições</option>
-              <option value="5" selected>5 refeições</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group" style="margin-top:16px;">
+        <div class="form-group" style="margin-top: 16px">
           <label for="observacoes">Observações adicionais</label>
           <textarea id="observacoes" name="observacoes" rows="3"
             placeholder="Preferências, horários, condições de saúde relevantes…"></textarea>
@@ -174,39 +171,22 @@
           </svg>
           Gerar minha dieta
         </button>
-
       </form>
     </div>
+
+    <div id="resultadoDieta"></div>
   </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <img src="../assets/imgs/logo nutrinove dark.png" alt="NutriNove logo" id="logoFooter">
+      <img src="../assets/imgs/logo nutrinove dark.png" alt="NutriNove logo" id="logoFooter" />
       <p class="copy">© 2026 NutriNove — Projeto Extensivo</p>
     </div>
   </footer>
 
-  <script src="../js/form.js"></script>
-  <script>
-    /* Hambúrguer */
-    const toggle = document.getElementById('navToggle');
-    const nav = document.getElementById('mainNav');
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-    });
-
-    /* Máscara de CPF */
-    document.getElementById('cpf').addEventListener('input', function () {
-      let v = this.value.replace(/\D/g, '').slice(0, 11);
-      if (v.length > 9) v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, '$1.$2.$3-$4');
-      else if (v.length > 6) v = v.replace(/(\d{3})(\d{3})(\d{0,3})/, '$1.$2.$3');
-      else if (v.length > 3) v = v.replace(/(\d{3})(\d{0,3})/, '$1.$2');
-      this.value = v;
-    });
-  </script>
-
+  <script type="module" src="../js/form.js"></script>
+  <script src="../js/api.js"></script>
 </body>
 
 </html>

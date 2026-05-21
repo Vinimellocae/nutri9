@@ -16,34 +16,69 @@ document.getElementById('cpf').addEventListener('input', function (e) {
   e.target.value = v;
 });
 
-function buscarHistorico() {
-  const cpfBusca = document.getElementById('cpf').value;
-  const lista = document.getElementById('listaResultados');
+async function buscarHistorico() {
+  const cpfInput = document.getElementById("cpf");
+  const lista = document.getElementById("listaResultados");
 
-  lista.innerHTML = '';
+  const cpfBusca = cpfInput.value.replace(/\D/g, "");
 
-  if (cpfBusca.length < 14) {
-    abrirModal("CPF Incompleto", "Por favor, digite o CPF completo para realizar a busca.");
+  lista.innerHTML = "";
+
+  if (cpfBusca.length !== 11) {
+    abrirModal("CPF inválido", "Digite um CPF válido.");
     return;
   }
 
-  let historico = JSON.parse(localStorage.getItem('nutrinove_historico')) || [];
-  let resultados = historico.filter(dieta => dieta.cpf === cpfBusca);
+  try {
 
-  if (resultados.length === 0) {
-    abrirModal("Não encontrado", "Não encontramos registros para este CPF. Tente gerar uma dieta primeiro!");
-    return;
+    const response = await fetch(
+      `https://nutrinove-backend.onrender.com/menu/cpf/${cpfBusca}`
+    );
+
+    if (!response.ok) {
+      throw new Error("Erro ao buscar histórico");
+    }
+
+    const data = await response.json();
+
+    const resultados = data.menus;
+
+    if (!resultados || resultados.length === 0) {
+      abrirModal("Não encontrado", "Não encontramos dietas para este CPF.");
+      return;
+    }
+
+    resultados.reverse();
+
+    resultados.forEach(menu => {
+      const dataFormatada = new Date(menu.created_at).toLocaleDateString("pt-BR");
+
+      const objetivo = menu.objetivo.replace(/_/g, " ");
+      const objetivoFormatado = objetivo.charAt(0).toUpperCase() + objetivo.slice(1);
+
+      const item = document.createElement("div");
+      item.className = "diet-item";
+      item.innerHTML = `
+        <div class="diet-info">
+          <h4>${objetivoFormatado}</h4>
+          <div class="diet-tags">
+            <span class="diet-tag">📅 ${dataFormatada}</span>
+            <span class="diet-tag">⚖️ ${menu.peso} kg</span>
+            <span class="diet-tag">🔥 ${menu.calorie_goal} kcal</span>
+            <span class="diet-tag">⚡ ${menu.nivel_atividade}</span>
+          </div>
+        </div>
+        <button class="btn-open" onclick="baixarPDF(${menu.id})">Baixar PDF</button>
+      `;
+      lista.appendChild(item);
+    });
+
+  } catch (error) {
+    console.error(error);
+    abrirModal("Erro", "Não foi possível carregar o histórico.");
   }
+}
 
-  resultados.reverse().forEach(dieta => {
-    lista.innerHTML += `
-                    <div class="diet-item">
-                        <div class="diet-info">
-                            <h4>Plano: ${dieta.objetivo}</h4>
-                            <span>Data: ${dieta.data} | Peso: ${dieta.peso}kg</span>
-                        </div>
-                        <button class="btn-open">Visualizar</button>
-                    </div>
-                `;
-  });
+function baixarPDF(id) {
+  window.open(`https://nutrinove-backend.onrender.com/menu/${id}/pdf`);
 }

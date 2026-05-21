@@ -21,6 +21,10 @@
   src: url(../assets/fonts/Nunito/Nunito-VariableFont_wght.ttf);
 }
 
+main {
+  flex: 1;
+}
+
 /* ── Tokens ── */
 :root {
   --green-dark: #1b5e20;
@@ -51,6 +55,10 @@ body {
   background-color: var(--off-white);
   color: var(--text-dark);
   line-height: 1.6;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 img,
@@ -86,6 +94,12 @@ header {
   width: min(1200px, 100% - 2rem);
   margin-inline: auto;
   gap: 1rem;
+}
+
+.logo-a {
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }
 
 #logo {
