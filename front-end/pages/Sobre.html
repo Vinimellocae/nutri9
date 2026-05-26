@@ -11,7 +11,6 @@
 </head>
 
 <body>
-  <!-- HEADER -->
   <header>
     <div class="header-inner">
       <a href="../index.html" class="logo-a">
@@ -31,7 +30,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="sobre-hero">
     <div class="section-overlay"></div>
     <div class="sobre-hero-content">
@@ -44,13 +42,11 @@
     </div>
   </section>
 
-  <!-- MVV -->
   <section class="mvv-section">
     <div class="container">
       <div class="mvv-grid">
-        <!-- Missão -->
         <div class="mvv-card">
-          <img src="../assets/imgs/verduras.jpg" alt="Missão" class="mvv-card-img" />
+          <img src="../assets/imgs/vegetais.jpg" alt="Missão" class="mvv-card-img" />
           <div class="mvv-card-body">
             <span class="mvv-card-label">🎯 Missão</span>
             <h2>Transformar a sua saúde</h2>
@@ -63,15 +59,14 @@
             <p>
               Com base no formulário preenchido, criamos uma dieta sob medida
               — seja para perda de peso, alimentação mais saudável, ganho de
-              massa ou outros objetivos — facilitando e desburocratizando o
+              massa ou outros objectives — facilitando e desburocratizando o
               acesso a uma nutrição acessível para todos.
             </p>
           </div>
         </div>
 
-        <!-- Valores -->
         <div class="mvv-card">
-          <img src="../assets/imgs/vegetais.jpg" alt="Valores" class="mvv-card-img" />
+          <img src="../assets/imgs/laticinios.jpg" alt="Valores" class="mvv-card-img" />
           <div class="mvv-card-body">
             <span class="mvv-card-label">💚 Valores</span>
             <h2>O que nos move</h2>
@@ -108,7 +103,6 @@
           </div>
         </div>
 
-        <!-- Visão — linha inteira -->
         <div class="mvv-card card-full">
           <img src="../assets/imgs/cereais.jpg" alt="Visão" class="mvv-card-img" />
           <div class="mvv-card-body">
@@ -130,25 +124,77 @@
           </div>
         </div>
       </div>
+
+      <div class="mvv-card card-full" style="margin-top: 2rem;">
+        <img src="../assets/imgs/trabalho.jpg" alt="Visão" class="mvv-card-img" />
+        <div class="mvv-card-body">
+          <span class="mvv-card-label">👥 EQUIPE</span>
+          <h2>Integrantes</h2>
+          <p>
+            O projeto NutriNove foi desenvolvido de forma colaborativa por estudantes e mentes
+            criativas dedicadas à automação tecnológica e saúde nutricional.
+          </p>
+
+          <ul
+            style="list-style: none; padding: 0; margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem 2rem;">
+            <li>
+              <b>📱 Alvaro Kayque</b><br>
+              <i style="color: var(--green-dark); font-size: 0.85rem; font-style: normal; font-weight: 600;">Banco de
+                Dados</i>
+            </li>
+            <li>
+              <b>🎨 Artur Juan</b><br>
+              <i
+                style="color: var(--green-dark); font-size: 0.85rem; font-style: normal; font-weight: 600;">Back-end</i>
+            </li>
+            <li>
+              <b>🔧 Bruno Rinolfi</b><br>
+              <i style="color: var(--green-dark); font-size: 0.85rem; font-style: normal; font-weight: 600;">Textos do
+                Site e Slide</i>
+            </li>
+            <li>
+              <b>📝 Daniel de Mendonça</b><br>
+              <i style="color: var(--green-dark); font-size: 0.85rem; font-style: normal; font-weight: 600;">Design,
+                Fórmulas e Vídeo</i>
+            </li>
+            <li>
+              <b>💡 Gisella Savoia</b><br>
+              <i style="color: var(--green-dark); font-size: 0.85rem; font-style: normal; font-weight: 600;">Produção
+                Audiovisual</i>
+            </li>
+            <li>
+              <b>🚀 Guilherme Pereira</b><br>
+              <i style="color: var(--green-dark); font-size: 0.85rem; font-style: normal; font-weight: 600;">Textos do
+                Site</i>
+            </li>
+            <li>
+              <b>📊 Gustavo de Barros</b><br>
+              <i style="color: var(--green-dark); font-size: 0.85rem; font-style: normal; font-weight: 600;">Front-end e
+                Edição de Vídeo</i>
+            </li>
+            <li>
+              <b>🔍 Pierre Wilguimpson</b><br>
+              <i style="color: var(--green-dark); font-size: 0.85rem; font-style: normal; font-weight: 600;">Banco de
+                Dados</i>
+            </li>
+            <li>
+              <b>💻 Vinícius de Mello</b><br>
+              <i style="color: var(--green-dark); font-size: 0.85rem; font-style: normal; font-weight: 600;">Front-end e
+                Requisições</i>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <img src="../assets/imgs/logo nutrinove dark.png" alt="NutriNove logo" id="logoFooter" />
       <p class="copy">© 2026 NutriNove — Projeto Extensivo</p>
     </div>
-  </footer>
-
-  <script>
-    const toggle = document.getElementById("navToggle");
-    const nav = document.getElementById("mainNav");
-    toggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", open);
-    });
-  </script>
+    </header>
+    <script src="../js/hamburguer.js"></script>
 </body>
 
 </html>

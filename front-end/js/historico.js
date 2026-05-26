@@ -8,12 +8,18 @@ function fecharModal() {
   document.getElementById('modalAviso').style.display = 'none';
 }
 
-document.getElementById('cpf').addEventListener('input', function (e) {
-  let v = e.target.value.replace(/\D/g, "");
-  v = v.replace(/(\d{3})(\d)/, "$1.$2");
-  v = v.replace(/(\d{3})(\d)/, "$1.$2");
-  v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-  e.target.value = v;
+document.getElementById("cpf").addEventListener("input", function () {
+  let v = this.value.replace(/\D/g, "").slice(0, 11);
+  if (v.length > 9)
+    v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, "$1.$2.$3-$4");
+  else if (v.length > 6)
+    v = v.replace(/(\d{3})(\d{3})(\d{0,3})/, "$1.$2.$3");
+  else if (v.length > 3) v = v.replace(/(\d{3})(\d{0,3})/, "$1.$2");
+  this.value = v;
+});
+
+document.getElementById("cpf").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") buscarHistorico();
 });
 
 async function buscarHistorico() {
