@@ -1,8 +1,11 @@
 # 🥗 NutriNove
 
-Sistema web para geração de planos alimentares personalizados com base nos dados do usuário. O projeto permite gerar dietas, armazenar históricos vinculados ao CPF e realizar o download de planos alimentares em PDF.
+⚠️ **AVISO IMPORTANTE / DISCLAIMER** *Este é um projeto estritamente acadêmico e de extensão, desenvolvido para fins de aprendizado no 1º semestre. O sistema e os planos alimentares gerados são simulações fictícias e não possuem validação médica ou nutricional. As informações contidas aqui não substituem, em hipótese alguma, a orientação, diagnóstico ou acompanhamento de um profissional de saúde ou nutricionista credenciado.*
 
-Desenvolvido como projeto acadêmico/extensivo.
+---
+
+## 🔗 Link do Projeto
+👉 [Acesse o projeto online aqui](https://nutri9.vercel.app/index.html)
 
 ---
 
