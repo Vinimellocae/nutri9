@@ -6,13 +6,7 @@
 
 ## 🔗 Link do Projeto
 👉 [Acesse o projeto online aqui](https://nutri9.vercel.app/index.html)
-
----
-
-## 🔗 Backend do Projeto
 👉 [Acesse o backend do projeto]((https://github.com/ArturJuan/nutrinove-backend))
-
----
 
 ## 📌 Funcionalidades
 
