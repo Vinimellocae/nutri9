@@ -9,6 +9,11 @@
 
 ---
 
+## 🔗 Backend do Projeto
+👉 [Acesse o backend do projeto]((https://github.com/ArturJuan/nutrinove-backend))
+
+---
+
 ## 📌 Funcionalidades
 
 ### Formulário Inteligente
