@@ -4,11 +4,11 @@
 
 ---
 
-## 🔗 Link do Projeto
-👉 [Acesse o projeto online aqui](https://nutri9.vercel.app/index.html)
-👉 [Acesse o backend do projeto]((https://github.com/ArturJuan/nutrinove-backend))
+## 🔗 Links do Projeto
 
-## 📌 Funcionalidades
+- 🌐 Demo: https://nutri9.vercel.app/index.html
+- 💻 Repositório do Front-end (minha contribuição): https://github.com/Vinimellocae/Nutri9
+- ⚙️ Repositório do Back-end (desenvolvido por Artur Juan): https://github.com/ArturJuan/nutrinove-backend
 
 ### Formulário Inteligente
 
